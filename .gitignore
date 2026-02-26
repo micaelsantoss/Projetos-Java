@@ -1,0 +1,18 @@
+# Compilados
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# VSCode
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
