@@ -7,14 +7,14 @@ public class Account {
 
     private double saldo;
 
-    private static final int MAX_LENGTH = 12;
+    private static final int MAX_LENGTH = 20;
 
     public Account(String ag, String cc, String name){
         this.ag = ag;
         this.cc = cc;
         setName(name);
 
-        System.out.println("Cliente cadastrado com sucesso!");
+        System.out.println("Cliente " + name + " cadastrado com sucesso! " + "Agência: " + ag + " conta: " + cc);
     }
 
     public void setName(String name){
@@ -25,14 +25,14 @@ public class Account {
         }
     }
 
-    public double verSaldo(){
-        return saldo;
+    public String verSaldo(){
+        return "R$" + saldo;
     }
 
     public void depositar(double value){
         if(value > 1){
             saldo += value;
-            System.out.println("R$ " + value + " foram depositados com sucesso!");
+            System.out.println("R$ " + value + " foram depositados com sucesso! Seu saldo agora é de R$" + saldo);
         }else{
             System.out.println("valor de depósito precisa ser maior do que R$1,00!");
         }
@@ -41,7 +41,7 @@ public class Account {
     public void sacar(double value){
         if(value <= saldo){
             saldo -= value;
-            System.out.println("R$ " + value + " foram sacados com sucesso!");
+            System.out.println("R$ " + value + " foram sacados com sucesso! Seu saldo agora é de R$" + saldo);
         }else{
             System.out.println("valor de saque precisa ser menor do que o valor do seu saldo!");
         }
